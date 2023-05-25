@@ -24,7 +24,7 @@ const Preview = ({ resumeData }) => {
                 <div className="f-col items-center mb-1" >
                     {
                         resumeData.profilePicture.length > 0 &&
-                        <div className="w-24 h-24 rounded-full overflow-hidden border-2 border-fuchsia-700">
+                        <div className="w-24 h-24 rounded-full overflow-hidden border-2 border-teal-700">
                             <Image
                                 src={resumeData.profilePicture}
                                 alt="profile"
@@ -54,7 +54,7 @@ const Preview = ({ resumeData }) => {
                                     key={index}
                                     title={socialMedia.socialMedia} target="_blank" rel="noreferrer" className="inline-flex items-center gap-1 social-media">
                                     {icons.map((icon, index) => {
-                                        if (icon.name === socialMedia.socialMedia.toLowerCase()) {
+                                        if ( socialMedia.socialMedia && icon.name === socialMedia.socialMedia.toLowerCase()) {
                                             return <span key={index}>{icon.icon}</span>;
                                         }
                                     })}
